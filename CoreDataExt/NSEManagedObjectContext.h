@@ -55,6 +55,13 @@
 
 @interface NSEManagedObjectContextUserInfo : NSEDictionaryObject
 
+@property (readonly) NSSet<NSManagedObject *> *inserted;
+@property (readonly) NSSet<NSManagedObject *> *updated;
+@property (readonly) NSSet<NSManagedObject *> *deleted;
+@property (readonly) NSSet<NSManagedObject *> *refreshed;
+@property (readonly) NSSet<NSManagedObject *> *invalidated;
+@property (readonly) NSArray<NSManagedObjectID *> *invalidatedAll;
+
 @end
 
 
@@ -71,6 +78,7 @@
 @optional
 - (void)nseManagedObjectContextObjectsDidChange:(NSManagedObjectContext *)context;
 - (void)nseManagedObjectContextDidSave:(NSManagedObjectContext *)context;
+- (void)nseManagedObjectContextWillSave:(NSManagedObjectContext *)context;
 
 @end
 
