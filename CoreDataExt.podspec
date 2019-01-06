@@ -58,16 +58,16 @@ Pod::Spec.new do |s|
   # s.authors            = { "Dan Kalinin" => "daniil5511@gmail.com" }
   # s.social_media_url   = "http://twitter.com/Dan Kalinin"
 
-  # ――― PlatfCoreDataExt Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
-  #  If this Pod runs only on iOS or OS X, then specify the platfCoreDataExt and
-  #  the deployment target. You can optionally include the target after the platfCoreDataExt.
+  #  If this Pod runs only on iOS or OS X, then specify the platform and
+  #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platfCoreDataExt     = :ios
-  s.platfCoreDataExt     = :ios, "11.0"
+  # s.platform     = :ios
+  s.platform     = :ios, "11.0"
 
-  #  When using multiple platfCoreDataExts
+  #  When using multiple platform
   # s.ios.deployment_target = "5.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
