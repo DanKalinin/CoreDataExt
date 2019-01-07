@@ -52,11 +52,18 @@
 
 @protocol NSEPersistentStoreCoordinatorDelegate <NSEObjectDelegate>
 
+@optional
+- (void)nsePersistentStoreCoordinatorStoresDidChange:(NSNotification *)notification;
+- (void)nsePersistentStoreCoordinatorStoresWillChange:(NSNotification *)notification;
+- (void)nsePersistentStoreCoordinatorWillRemoveStore:(NSNotification *)notification;
+
 @end
 
 
 
 @interface NSEPersistentStoreCoordinatorOperation : NSEObjectOperation <NSEPersistentStoreCoordinatorDelegate>
+
+@property (readonly) HLPArray<NSEPersistentStoreCoordinatorDelegate> *delegates;
 
 @property (weak, readonly) NSPersistentStoreCoordinator *object;
 
