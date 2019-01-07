@@ -98,6 +98,16 @@
 @dynamic delegates;
 @dynamic object;
 
+- (instancetype)initWithObject:(NSPersistentContainer *)object {
+    self = [super initWithObject:object];
+    
+    [self loadPersistentStores];
+    
+    [object.viewContext.nseOperation.delegates addObject:self.delegates];
+    
+    return self;
+}
+
 - (void)loadPersistentStores {
     [self.object loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *store, NSError *error) {
         self.didLoadPersistentStore = [NSEPersistentContainerDidLoadPersistentStore.alloc initWithStore:store error:error].nseAutorelease;

@@ -7,6 +7,8 @@
 
 #import <CoreData/CoreData.h>
 #import <Helpers/Helpers.h>
+#import "NSEManagedObjectContext.h"
+#import "NSEPersistentStoreCoordinator.h"
 
 @class NSEPersistentContainer;
 @class NSEPersistentContainerDidLoadPersistentStore;
@@ -69,7 +71,7 @@
 
 
 
-@protocol NSEPersistentContainerDelegate <NSEObjectDelegate>
+@protocol NSEPersistentContainerDelegate <NSEObjectDelegate, NSEManagedObjectContextDelegate>
 
 @optional
 - (void)nsePersistentContainerDidLoadPersistentStore:(NSPersistentContainer *)container;

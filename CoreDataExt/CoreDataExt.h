@@ -12,4 +12,5 @@ FOUNDATION_EXPORT double CoreDataExtVersionNumber;
 FOUNDATION_EXPORT const unsigned char CoreDataExtVersionString[];
 
 #import <CoreDataExt/NSEManagedObjectContext.h>
+#import <CoreDataExt/NSEPersistentStoreCoordinator.h>
 #import <CoreDataExt/NSEPersistentContainer.h>

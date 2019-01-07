@@ -84,7 +84,7 @@
 
 
 
-@interface NSEManagedObjectContextOperation : NSEObjectOperation
+@interface NSEManagedObjectContextOperation : NSEObjectOperation <NSEManagedObjectContextDelegate>
 
 @property (readonly) HLPArray<NSEManagedObjectContextDelegate> *delegates;
 
