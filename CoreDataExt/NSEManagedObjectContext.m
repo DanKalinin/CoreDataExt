@@ -131,7 +131,6 @@
 }
 
 - (void)willSaveNotification:(NSNotification *)notification {
-    self.userInfo = [NSEManagedObjectContextUserInfo.alloc initWithDictionary:notification.userInfo].nseAutorelease;
     [self.delegates nseManagedObjectContextWillSave:notification.object];
 }
 
