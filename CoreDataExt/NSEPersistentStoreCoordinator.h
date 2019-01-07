@@ -53,9 +53,9 @@
 @protocol NSEPersistentStoreCoordinatorDelegate <NSEObjectDelegate>
 
 @optional
-- (void)nsePersistentStoreCoordinatorStoresDidChange:(NSNotification *)notification;
-- (void)nsePersistentStoreCoordinatorStoresWillChange:(NSNotification *)notification;
-- (void)nsePersistentStoreCoordinatorWillRemoveStore:(NSNotification *)notification;
+- (void)nsePersistentStoreCoordinatorStoresDidChange:(NSPersistentStoreCoordinator *)coordinator;
+- (void)nsePersistentStoreCoordinatorStoresWillChange:(NSPersistentStoreCoordinator *)coordinator;
+- (void)nsePersistentStoreCoordinatorWillRemoveStore:(NSPersistentStoreCoordinator *)coordinator;
 
 @end
 

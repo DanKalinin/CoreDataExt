@@ -76,15 +76,15 @@
 }
 
 - (void)storesDidChangeNotification:(NSNotification *)notification {
-    
+    [self.delegates nsePersistentStoreCoordinatorStoresDidChange:notification.object];
 }
 
 - (void)storesWillChangeNotification:(NSNotification *)notification {
-    
+    [self.delegates nsePersistentStoreCoordinatorStoresWillChange:notification.object];
 }
 
 - (void)willRemoveStoreNotification:(NSNotification *)notification {
-    
+    [self.delegates nsePersistentStoreCoordinatorWillRemoveStore:notification.object];
 }
 
 @end

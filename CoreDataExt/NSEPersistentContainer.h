@@ -71,7 +71,7 @@
 
 
 
-@protocol NSEPersistentContainerDelegate <NSEObjectDelegate>
+@protocol NSEPersistentContainerDelegate <NSEObjectDelegate, NSEManagedObjectContextDelegate, NSEPersistentStoreCoordinatorDelegate>
 
 @optional
 - (void)nsePersistentContainerDidLoadPersistentStore:(NSPersistentContainer *)container;
