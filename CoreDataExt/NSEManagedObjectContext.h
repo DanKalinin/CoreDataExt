@@ -6,7 +6,7 @@
 //
 
 #import <CoreData/CoreData.h>
-#import <Helpers/Helpers.h>
+#import <FoundationExt/FoundationExt.h>
 
 @class NSEManagedObjectContext;
 @class NSEManagedObjectContextUserInfo;
