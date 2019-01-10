@@ -63,7 +63,7 @@
 
 @interface NSEPersistentStoreCoordinatorOperation : NSEObjectOperation <NSEPersistentStoreCoordinatorDelegate>
 
-@property (readonly) HLPArray<NSEPersistentStoreCoordinatorDelegate> *delegates;
+@property (readonly) NSEOrderedSet<NSEPersistentStoreCoordinatorDelegate> *delegates;
 
 @property (weak, readonly) NSPersistentStoreCoordinator *object;
 
