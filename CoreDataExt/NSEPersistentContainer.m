@@ -105,4 +105,9 @@
     }];
 }
 
+- (NSManagedObjectContext *)newBackgroundContext {
+    NSManagedObjectContext *context = self.object.newBackgroundContext;
+    return context;
+}
+
 @end

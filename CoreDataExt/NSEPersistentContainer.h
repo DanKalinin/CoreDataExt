@@ -88,5 +88,6 @@
 @property (weak, readonly) NSEPersistentContainerDidLoadPersistentStore *didLoadPersistentStore;
 
 - (void)loadPersistentStores;
+- (NSManagedObjectContext *)newBackgroundContext;
 
 @end
