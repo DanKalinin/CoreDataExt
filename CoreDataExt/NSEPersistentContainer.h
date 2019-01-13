@@ -82,7 +82,7 @@
 
 @interface NSEPersistentContainerOperation : NSEObjectOperation <NSEPersistentContainerDelegate>
 
-@property (readonly) NSEOrderedSet<NSEPersistentContainerDelegate> *delegates;
+@property (readonly) NSMutableOrderedSet<NSEPersistentContainerDelegate> *delegates;
 
 @property (weak, readonly) NSPersistentContainer *object;
 @property (weak, readonly) NSEPersistentContainerDidLoadPersistentStore *didLoadPersistentStore;

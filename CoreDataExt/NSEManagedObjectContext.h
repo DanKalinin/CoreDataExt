@@ -86,7 +86,7 @@
 
 @interface NSEManagedObjectContextOperation : NSEObjectOperation <NSEManagedObjectContextDelegate>
 
-@property (readonly) NSEOrderedSet<NSEManagedObjectContextDelegate> *delegates;
+@property (readonly) NSMutableOrderedSet<NSEManagedObjectContextDelegate> *delegates;
 
 @property (weak, readonly) NSManagedObjectContext *object;
 @property (weak, readonly) NSEManagedObjectContextUserInfo *userInfo;

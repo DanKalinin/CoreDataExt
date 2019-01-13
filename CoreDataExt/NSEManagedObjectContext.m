@@ -113,9 +113,9 @@
     [self.center addObserver:self selector:@selector(didSaveNotification:) name:NSManagedObjectContextDidSaveNotification object:object];
     [self.center addObserver:self selector:@selector(willSaveNotification:) name:NSManagedObjectContextWillSaveNotification object:object];
     
-    [self.delegates.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextObjectsDidChange:))];
-    [self.delegates.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextDidSave:))];
-    [self.delegates.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextWillSave:))];
+    [self.delegates.nseOperation.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextObjectsDidChange:))];
+    [self.delegates.nseOperation.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextDidSave:))];
+    [self.delegates.nseOperation.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextWillSave:))];
     
     return self;
 }

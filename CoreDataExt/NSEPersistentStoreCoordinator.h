@@ -63,7 +63,7 @@
 
 @interface NSEPersistentStoreCoordinatorOperation : NSEObjectOperation <NSEPersistentStoreCoordinatorDelegate>
 
-@property (readonly) NSEOrderedSet<NSEPersistentStoreCoordinatorDelegate> *delegates;
+@property (readonly) NSMutableOrderedSet<NSEPersistentStoreCoordinatorDelegate> *delegates;
 
 @property (weak, readonly) NSPersistentStoreCoordinator *object;
 
