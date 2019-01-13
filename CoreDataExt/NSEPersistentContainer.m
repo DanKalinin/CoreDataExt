@@ -107,6 +107,7 @@
 
 - (NSManagedObjectContext *)newBackgroundContext {
     NSManagedObjectContext *context = self.object.newBackgroundContext;
+    [context.nseOperation.delegates addObject:self.delegates];
     return context;
 }
 
