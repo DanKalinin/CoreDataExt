@@ -12,6 +12,7 @@
 
 @class NSEPersistentContainer;
 @class NSEPersistentContainerDidLoadPersistentStore;
+@class NSEPersistentContainerDidPerformBackgroundTask;
 @class NSEPersistentContainerOperation;
 
 @protocol NSEPersistentContainerDelegate;
@@ -71,10 +72,28 @@
 
 
 
+@interface NSEPersistentContainerDidPerformBackgroundTask : NSEObject
+
+@property (readonly) NSManagedObjectContext *context;
+
+- (instancetype)initWithContext:(NSManagedObjectContext *)context;
+
+@end
+
+
+
+
+
+
+
+
+
+
 @protocol NSEPersistentContainerDelegate <NSEObjectDelegate, NSEManagedObjectContextDelegate, NSEPersistentStoreCoordinatorDelegate>
 
 @optional
 - (void)nsePersistentContainerDidLoadPersistentStore:(NSPersistentContainer *)container;
+- (void)nsePersistentContainerDidPerformBackgroundTask:(NSPersistentContainer *)container;
 
 @end
 
@@ -83,11 +102,13 @@
 @interface NSEPersistentContainerOperation : NSEObjectOperation <NSEPersistentContainerDelegate>
 
 @property (readonly) NSMutableOrderedSet<NSEPersistentContainerDelegate> *delegates;
+@property (readonly) NSManagedObjectContext *newBackgroundContext;
 
 @property (weak, readonly) NSPersistentContainer *object;
 @property (weak, readonly) NSEPersistentContainerDidLoadPersistentStore *didLoadPersistentStore;
+@property (weak, readonly) NSEPersistentContainerDidPerformBackgroundTask *didPerformBackgroundTask;
 
 - (void)loadPersistentStores;
-- (NSManagedObjectContext *)newBackgroundContext;
+- (void)performBackgroundTask;
 
 @end
