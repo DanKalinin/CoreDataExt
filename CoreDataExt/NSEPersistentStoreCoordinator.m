@@ -68,9 +68,9 @@
 - (instancetype)initWithObject:(NSPersistentStoreCoordinator *)object {
     self = [super initWithObject:object];
     
-    [self.center addObserver:self selector:@selector(storesDidChangeNotification:) name:NSPersistentStoreCoordinatorStoresDidChangeNotification object:object];
-    [self.center addObserver:self selector:@selector(storesWillChangeNotification:) name:NSPersistentStoreCoordinatorStoresWillChangeNotification object:object];
-    [self.center addObserver:self selector:@selector(willRemoveStoreNotification:) name:NSPersistentStoreCoordinatorWillRemoveStoreNotification object:object];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(storesDidChangeNotification:) name:NSPersistentStoreCoordinatorStoresDidChangeNotification object:object];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(storesWillChangeNotification:) name:NSPersistentStoreCoordinatorStoresWillChangeNotification object:object];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(willRemoveStoreNotification:) name:NSPersistentStoreCoordinatorWillRemoveStoreNotification object:object];
     
     return self;
 }

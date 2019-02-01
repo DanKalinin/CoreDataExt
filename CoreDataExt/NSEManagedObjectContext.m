@@ -109,9 +109,9 @@
 - (instancetype)initWithObject:(NSManagedObjectContext *)object {
     self = [super initWithObject:object];
     
-    [self.center addObserver:self selector:@selector(objectsDidChangeNotification:) name:NSManagedObjectContextObjectsDidChangeNotification object:object];
-    [self.center addObserver:self selector:@selector(didSaveNotification:) name:NSManagedObjectContextDidSaveNotification object:object];
-    [self.center addObserver:self selector:@selector(willSaveNotification:) name:NSManagedObjectContextWillSaveNotification object:object];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(objectsDidChangeNotification:) name:NSManagedObjectContextObjectsDidChangeNotification object:object];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(didSaveNotification:) name:NSManagedObjectContextDidSaveNotification object:object];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(willSaveNotification:) name:NSManagedObjectContextWillSaveNotification object:object];
     
     [self.delegates.nseOperation.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextObjectsDidChange:))];
     [self.delegates.nseOperation.exceptions addObject:NSStringFromSelector(@selector(nseManagedObjectContextDidSave:))];
